@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --shadow: 50px 0px 200px rgba(175, 167, 167, 0.24);
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+.custom-scroll::-webkit-scrollbar {
+  width: 2px; 
+}
+
+.custom-scroll {
+  scrollbar-width: thin; 
+}
+
+.small-scroll::-webkit-scrollbar-thumb {
+  background-color: #b4b4b4;
+  background: transparent;
+  border-radius: 4px;
+}
+
+
+@layer base {
+  * {
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+
+@layer theme {
+  :root {
+    --app-inner-gutter: 0.75rem;
+    --app-outer-gutter: clamp(24px, -11.897px + 8.974vw, 80px);
+
+    --app-gutter: clamp(4px, -50.897px + 19.974vw, 250px);
+    --app-gutter-md: clamp(80px, 54.359px + 6.41vw, 120px);
+    --app-gutter-lg: clamp(80px, 3.077px + 19.231vw, 200px);
+    --app-gutter-xl: clamp(80px, -35.385px + 28.846vw, 260px);
+  }
+}
+
+.scroll-x-none {
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .px-gutter {
+    padding-left: var(--app-gutter);
+    padding-right: var(--app-gutter);
+  }
+
+  .py-gutter-xl {
+    padding-top: var(--app-gutter-xl);
+    padding-bottom: var(--app-gutter-xl);
+  }
+ 
+  .p-gutter {
+    padding: var(--app-gutter);
+  }
+}
+
+.shadow-c {
+  box-shadow:
+    -1.5px 0px 2px rgba(104, 104, 104, 0.16),  /* left */
+     1.5px 0px 2px rgba(104, 104, 104, 0.16),  /* right */
+     0px 1.5px 2px rgba(104, 104, 104, 0.16),  /* bottom */
+     0px -0.5px 2px rgba(104, 104, 104, 0.1);  /* top (reduced) */
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.3);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
