@@ -80,9 +80,3 @@ npm run preview    # Preview the production build locally
 ## License
 
 📝 For educational and personal practice only. Fork it, run it, and learn!
-
----
-
-## Author
-
-Made with ❤️ by Yash
