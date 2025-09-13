@@ -1,6 +1,5 @@
 # RoastAI-Frontend
 
-
 Frontend of the RoastAI project, built with **React, TypeScript, and Vite**, providing a clean, modern interface for users to interact with the AI backend.
 
 ---
