@@ -1,17 +1,25 @@
 import { useForm } from "react-hook-form";
+import { useLoginMyUser } from "../api/MyUserApi";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
 
-     const {
-            register,
-            handleSubmit,
-            formState: { errors },
-        } = useForm();
-    
-        const onSubmit = async (data:any) => {
-            console.log(data);
-    
-        };
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+    const { loginMyUserRequest } = useLoginMyUser();
+    const navigate = useNavigate();
+
+    const onSubmit = async (data: any) => {  
+        try {
+            await loginMyUserRequest(data);
+            navigate("/");
+        } catch (error) {
+            console.log(error,"Error while logging in. Please try again")
+        }
+    };
 
     return (
         <div className="w-full min-h-screen flex justify-center items-center">

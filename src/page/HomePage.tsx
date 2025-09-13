@@ -53,12 +53,12 @@ const handleLogout = async () => {
 
   try {
     await logoutRequest();
+    navigate("/login");  
     console.log("Logged out successfully");
   } catch (error) {
     console.error("Logout failed:", error);
   } finally {
     setIsPopupOpen(false);
-    navigate("/login");  
   }
 };
 

@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useSignupMyUser } from "../api/MyUserApi";
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
 
@@ -8,13 +9,18 @@ const SignupPage = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
+    const navigate = useNavigate();
 
     const {  signupMyUserRequest } = useSignupMyUser()
 
-    const onSubmit = async (data:any) => {
-        signupMyUserRequest(data)
+    const onSubmit = async (data: any) => {
+        try {
+            await signupMyUserRequest(data);
+            navigate("/");
+        } catch (error) {
+            console.log(error,"Error while signing up. Please try again")
+        }
     };
-
 
     return (
         <div className="w-full min-h-screen flex justify-center items-center">

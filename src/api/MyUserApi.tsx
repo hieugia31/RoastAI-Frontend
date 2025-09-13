@@ -13,7 +13,7 @@ export const useLoginMyUser = () => {
         setLoading(true);
 
         try {
-            const response = await fetch("/api/backend", {
+            const response = await fetch(`${BACKEND_BASE_URL}/api/users/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
