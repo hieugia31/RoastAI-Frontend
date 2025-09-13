@@ -111,3 +111,37 @@ export const useGetUser = () => {
 
     return { getUserRequest, success, error, loading, user }
 }
+
+export const useLogout = () => {
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+    const [success, setSuccess] = useState(false);
+
+    const logoutRequest = async () => {
+        setLoading(true);
+        setError(null);
+        setSuccess(false);
+
+        try {
+            const response = await fetch(`${BACKEND_BASE_URL}/api/users/logout`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                credentials: "include",
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to logout");
+            }
+
+            setSuccess(true);
+            return true;
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Something went wrong");
+            return false;
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return { logoutRequest, loading, error, success };
+};

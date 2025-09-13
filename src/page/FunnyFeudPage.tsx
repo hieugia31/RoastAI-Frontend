@@ -31,7 +31,7 @@ const FunnyFeudPage = ({ setOpenSidebar, openSidebar, floatingSendButton, setFlo
 
     return (
         <div className="h-screen flex flex-col">
-            <div className="fixed top-0 w-full z-50">
+            <div className="fixed top-0 w-full z-10">
                 <Header setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
             </div>
             {/* Main content area */}

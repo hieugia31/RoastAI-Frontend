@@ -19,7 +19,7 @@ const FunnyQuotesPage = ({ openSidebar, setOpenSidebar }: any) => {
 
     return (
         <div className="h-screen flex flex-col">
-            <div className="fixed top-0 w-full z-50">
+            <div className="fixed top-0 w-full z-10">
                 <Header setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
             </div>
             <div className="max-w-[48rem] mt-20 mx-auto flex flex-1 w-full">

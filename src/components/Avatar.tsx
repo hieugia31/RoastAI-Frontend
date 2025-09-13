@@ -1,11 +1,7 @@
 import { useMemo } from "react";
 import { getInitials, stringToColor } from "../utils/stringUtils";
 
-interface AvatarProps {
-    name: string;
-}
-
-export const Avatar = ({ name }: AvatarProps) => {
+export const Avatar = ({ name}: any) => {
     const initials = getInitials(name);
     const bgColor = useMemo(() => stringToColor(name), [name]);
 
