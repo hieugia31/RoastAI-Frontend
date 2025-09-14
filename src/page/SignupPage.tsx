@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useSignupMyUser } from "../api/MyUserApi";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import EmailVerificationPopup from "../components/EmailVerificationPopup";
 
 const SignupPage = () => {
 
@@ -10,26 +10,26 @@ const SignupPage = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const navigate = useNavigate();
     const { signupMyUserRequest } = useSignupMyUser();
     const [showPassword, setShowPassword] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
 
 
     const onSubmit = async (data: any) => {
         try {
             await signupMyUserRequest(data);
-            navigate("/");
+            setShowPopup(true);
         } catch (error) {
             console.log(error, "Error while signing up. Please try again")
         }
     };
 
     return (
-        <div className="w-full min-h-screen flex justify-center items-center">
+        <div className="relative w-full min-h-screen flex justify-center items-center">
             <div className="border-[0.1px] border-[#e7e6e6] rounded-2xl">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 items-start px-5 py-4">
                     <div className="flex flex-col gap-2">
-                        <h3 className="text-xl sm:text-2xl font-semibold text-[#0a0a0a]">Create an account</h3>
+                        <h3 className="text-xl sm:text-2xl font-semibold text-[#0a0a0a]">Welcome to Roast AI</h3>
                         <p className="text-[#737373] text-md w-[35ch]">Enter your email below to create your account</p>
                     </div>       
                     <div className="flex flex-col items-start gap-1 w-full">
@@ -88,6 +88,12 @@ const SignupPage = () => {
                     </p>
                 </form>
             </div>
+            {showPopup && (
+                <EmailVerificationPopup
+                    message="Please check your email to verify your account."
+                    onClose={() => setShowPopup(false)}
+                />
+            )}
         </div>
     )
 }
