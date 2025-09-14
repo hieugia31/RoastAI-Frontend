@@ -1,12 +1,11 @@
-import LoginPage from "./page/LoginPage";
-import SignupPage from "./page/SignupPage";
-import HomePage from "./page/HomePage";
-import { Routes, Route } from "react-router-dom";
-import PrivateRoute from "./components/PrivateRoute"
-import VerifyEmail from "./components/VerifyEmail";
+import LoginPage from './page/LoginPage';
+import SignupPage from './page/SignupPage';
+import HomePage from './page/HomePage';
+import { Routes, Route } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
+import VerifyEmail from './components/VerifyEmail';
 
 function App() {
-
   return (
     <div className="min-h-screen flex flex-col bg-[#fff] text-[#313131]">
       <Routes>
@@ -26,4 +25,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
