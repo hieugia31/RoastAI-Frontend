@@ -3,6 +3,7 @@ import SignupPage from "./page/SignupPage";
 import HomePage from "./page/HomePage";
 import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute"
+import VerifyEmail from "./components/VerifyEmail";
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/verify/:token" element={<VerifyEmail />} />
         <Route
           path="/"
           element={
