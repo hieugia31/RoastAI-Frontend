@@ -5,41 +5,46 @@ Frontend of the RoastAI project, built with **React, TypeScript, and Vite**, pro
 ---
 
 ## Project Overview / Purpose
-This frontend allows users to:  
-- Chat with **SavageBot**, a witty, roast-style AI.  
-- Receive humorous responses from the AI based on user input.  
-- Browse funny debates and quote remixes.  
+
+This frontend allows users to:
+
+- Chat with **SavageBot**, a witty, roast-style AI.
+- Receive humorous responses from the AI based on user input.
+- Browse funny debates and quote remixes.
 
 It communicates with the RoastAI backend to fetch AI responses and display them in a responsive, stylish interface.
 
 ---
 
 ## Features
-- Interactive **chat with SavageBot**  
-- **Funny debates** and quote remix features  
-- Fully **responsive UI** with TailwindCSS  
-- **Form handling** with React Hook Form  
+
+- Interactive **chat with SavageBot**
+- **Funny debates** and quote remix features
+- Fully **responsive UI** with TailwindCSS
+- **Form handling** with React Hook Form
 - Routing handled via **React Router DOM**
 
 ---
 
 ## Tech Stack
-- **Frontend:** React.js, TypeScript, TailwindCSS  
-- **Build & Dev Tools:** Vite, ESLint  
-- **Libraries:** React Hook Form, Lucide React, Tailwind Scrollbar  
+
+- **Frontend:** React.js, TypeScript, TailwindCSS
+- **Build & Dev Tools:** Vite, ESLint
+- **Libraries:** React Hook Form, Lucide React, Tailwind Scrollbar
 
 ---
 
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js >= 16
 - A running instance of the RoastAI backend
 - `.env` file with the following key:
 
 ```env
 VITE_BACKEND_BASE_URL=<your_backend_api_url>
-````
+```
 
 ### Installation
 
@@ -55,7 +60,7 @@ npm install
 npm run dev
 ```
 
-* Starts the development server via Vite.
+- Starts the development server via Vite.
 
 ### Build & Preview
 

@@ -1,147 +1,147 @@
-import { useState } from "react"
+import { useState } from 'react';
 
 const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_BASE_URL;
 
 export const useLoginMyUser = () => {
-    const [success, setSuccess] = useState(false);
-    const [error, setError] = useState<null | string>(null);
-    const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<null | string>(null);
+  const [loading, setLoading] = useState(false);
 
-    const loginMyUserRequest = async (data: any) => {
-        setSuccess(false);
-        setError(null);
-        setLoading(true);
+  const loginMyUserRequest = async (data: any) => {
+    setSuccess(false);
+    setError(null);
+    setLoading(true);
 
-        try {
-            const response = await fetch(`${BACKEND_BASE_URL}/api/users/login`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                credentials: "include",
-                body: JSON.stringify(data)
-            })
+    try {
+      const response = await fetch(`${BACKEND_BASE_URL}/api/users/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(data),
+      });
 
-            if (!response.ok) {
-                throw new Error("Failed to login");
-            }
+      if (!response.ok) {
+        throw new Error('Failed to login');
+      }
 
-            setSuccess(true);
-            return await response.json()
-        } catch (error) {
-            setError(error instanceof Error ? error.message : "Something went wrong");
-        } finally {
-            setLoading(false);
-        }
+      setSuccess(true);
+      return await response.json();
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Something went wrong');
+    } finally {
+      setLoading(false);
     }
+  };
 
-    return { success, error, loading, loginMyUserRequest }
-}
+  return { success, error, loading, loginMyUserRequest };
+};
 
 export const useSignupMyUser = () => {
-    const [success, setSuccess] = useState(false);
-    const [error, setError] = useState<null | string>(null);
-    const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<null | string>(null);
+  const [loading, setLoading] = useState(false);
 
-    const signupMyUserRequest = async (data: any) => {
-        setSuccess(false);
-        setError(null);
-        setLoading(true);
+  const signupMyUserRequest = async (data: any) => {
+    setSuccess(false);
+    setError(null);
+    setLoading(true);
 
-        try {
-            const response = await fetch(`${BACKEND_BASE_URL}/api/users/signup`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                credentials: "include",
-                body: JSON.stringify(data)
-            })
+    try {
+      const response = await fetch(`${BACKEND_BASE_URL}/api/users/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(data),
+      });
 
-            if (!response.ok) {
-                throw new Error("Failed to signup");
-            }
+      if (!response.ok) {
+        throw new Error('Failed to signup');
+      }
 
-            setSuccess(true)
-        } catch (error) {
-            setError(error instanceof Error ? error.message : "Something went wrong");
-        } finally {
-            setLoading(false);
-        }
+      setSuccess(true);
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Something went wrong');
+    } finally {
+      setLoading(false);
     }
+  };
 
-    return { success, error, loading, signupMyUserRequest }
-}
+  return { success, error, loading, signupMyUserRequest };
+};
 
 export const useGetUser = () => {
-    const [success, setSuccess] = useState(false);
-    const [error, setError] = useState<string | null>(null);
-    const [loading, setLoading] = useState(false);
-    const [user, setUser] = useState<any>(null);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState<any>(null);
 
-    const getUserRequest = async () => {
-        setSuccess(false);
-        setError(null);
-        setLoading(true);
-        setUser(null);
+  const getUserRequest = async () => {
+    setSuccess(false);
+    setError(null);
+    setLoading(true);
+    setUser(null);
 
-        try {
-            const response = await fetch(`${BACKEND_BASE_URL}/api/users/me`, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                credentials: "include"
-            })
+    try {
+      const response = await fetch(`${BACKEND_BASE_URL}/api/users/me`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
 
-            if (!response.ok) {
-                throw new Error("Internal server error")
-            }
+      if (!response.ok) {
+        throw new Error('Internal server error');
+      }
 
-            const data = await response.json();
-            setUser(data);
-            setSuccess(true);
-            return data;
-        } catch (error) {
-            setError(error instanceof Error ? error.message : "Something went wrong");
-        } finally {
-            setLoading(false)
-        }
+      const data = await response.json();
+      setUser(data);
+      setSuccess(true);
+      return data;
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Something went wrong');
+    } finally {
+      setLoading(false);
     }
+  };
 
-    return { getUserRequest, success, error, loading, user }
-}
+  return { getUserRequest, success, error, loading, user };
+};
 
 export const useLogout = () => {
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<string | null>(null);
-    const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
 
-    const logoutRequest = async () => {
-        setLoading(true);
-        setError(null);
-        setSuccess(false);
+  const logoutRequest = async () => {
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
 
-        try {
-            const response = await fetch(`${BACKEND_BASE_URL}/api/users/logout`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                credentials: "include",
-            });
+    try {
+      const response = await fetch(`${BACKEND_BASE_URL}/api/users/logout`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+      });
 
-            if (!response.ok) {
-                throw new Error("Failed to logout");
-            }
+      if (!response.ok) {
+        throw new Error('Failed to logout');
+      }
 
-            setSuccess(true);
-            return true;
-        } catch (err) {
-            setError(err instanceof Error ? err.message : "Something went wrong");
-            return false;
-        } finally {
-            setLoading(false);
-        }
-    };
+      setSuccess(true);
+      return true;
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong');
+      return false;
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    return { logoutRequest, loading, error, success };
+  return { logoutRequest, loading, error, success };
 };
