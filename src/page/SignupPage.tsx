@@ -9,7 +9,7 @@ const SignupPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { signupMyUserRequest } = useSignupMyUser();
+  const { signupMyUserRequest, loading, error } = useSignupMyUser();
   const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
@@ -92,7 +92,7 @@ const SignupPage = () => {
             type="submit"
             className="text-center w-full bg-zinc-800 text-white py-[5px] text-md text-semibold rounded hover:bg-zinc-700 focus:bg-zinc-600 my-2"
           >
-            Sign Up
+            {loading ? 'Loading...' : 'Sign Up'}
           </button>
           <p className="text-sm text-gray-600 w-full text-center">
             Already have an account?{' '}
@@ -100,6 +100,11 @@ const SignupPage = () => {
               Log in
             </a>
           </p>
+          {error && (
+            <p className="text-red-500 text-sm mb-2">
+              {error?.toString()}
+            </p>
+          )}
         </form>
       </div>
       {showPopup && (
